@@ -15,7 +15,10 @@ formRef.addEventListener('input', e => {formData[e.target.name] = e.target.value
 insertInput()
 
 function onFormSubmit(e){
-e.preventDefault();
+    e.preventDefault();
+    if (emailRef.value === "" || messageRef.value === "") {
+        return console.log("Please fill in all the fields!");
+      }
 console.log(formData)
 e.currentTarget.reset();
 localStorage.removeItem('email');
